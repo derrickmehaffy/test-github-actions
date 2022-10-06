@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: unable to reproduce
-        if: ${{ github.event.label.name == "status: can not reproduce" }}
+        if: ${{ contains(github.event.issue.labels.*.name, 'status: can not reproduce') }}
         uses: actions-cool/issues-helper@v3
         with:
           actions: 'create-comment'
