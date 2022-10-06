@@ -40,7 +40,7 @@ jobs:
           actions: 'add-assignees'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
-          assignees: 'derrickmehaffy, kasonde, bolg55'
+          assignees: 'derrickmehaffy, PaulBratslavsky'
           random-to: 1
       - name: comment on unsupported v3 issues
         if: "${{ github.event.label.name == 'flag: v3-unsupported' }}"
