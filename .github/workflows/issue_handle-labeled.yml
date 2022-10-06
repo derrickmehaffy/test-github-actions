@@ -86,7 +86,7 @@ jobs:
         with:
           # project-url: https://github.com/orgs/strapi/projects/11
           project-url: https://github.com/users/derrickmehaffy/projects/2
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ADD_TO_PROJECT_TOKEN }}
           labeled: "source: core:admin, source: core:content-manager, source: core:upload, source: plugin:i18n"
           label-operator: OR
       - name: assign issues to DevExp squad project
@@ -94,7 +94,7 @@ jobs:
         with:
           # project-url: https://github.com/orgs/strapi/projects/13
           project-url: https://github.com/users/derrickmehaffy/projects/3
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ADD_TO_PROJECT_TOKEN }}
           labeled: "source: core:content-type-builder, source: core:database, source: core:email, source: core:strapi, source: core:utils, source: plugin:graphql, source: plugin:users-permissions, source: typescript"
           label-operator: OR
       - name: assign issues to Expansions squad project
@@ -102,6 +102,6 @@ jobs:
         with:
           # project-url: https://github.com/orgs/strapi/projects/4
           project-url: https://github.com/users/derrickmehaffy/projects/4
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ADD_TO_PROJECT_TOKEN }}
           labeled: "source: marketplace, source: plugin:sentry, source: plugin:documentation"
           label-operator: OR
