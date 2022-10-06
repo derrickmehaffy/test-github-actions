@@ -25,10 +25,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Hello @${{ github.event.issue.user.login }}. Thank you for reporting this bug, however we are unable to reproduce the issue you described given the information we have on hand.
-            Can you please create a fresh project that you are able to reproduce the issue in, provide clear steps to reproduce this issue, and either upload this fresh project to a new GitHub repo or compress it into a `.zip` and upload it on this issue?
-            We would greatly appriciate your assistance with this, by working in a fresh project it will cut out any possible variables that might be unrelated.
+            Hello @${{ github.event.issue.user.login }},
+            
+            Thank you for reporting this bug, however we are unable to reproduce the issue you described given the information we have on hand. Can you please create a fresh project that you are able to reproduce the issue in, provide clear steps to reproduce this issue, and either upload this fresh project to a new GitHub repo or compress it into a `.zip` and upload it on this issue?
+            
+            We would greatly appreciate your assistance with this, by working in a fresh project it will cut out any possible variables that might be unrelated.
             Please note that issues labeled with `status: can not reproduce` will be closed in 14 days if there is no activity.
+
             Thank you!
       - name: add random solution engineer to reproduction issues
         if: "${{ github.event.label.name == 'status: pending reproduction' }}"
@@ -47,7 +50,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Hello,
+            Hello @${{ github.event.issue.user.login }},
+
             Thank you for reporting this potential bug report, please keep in mind that we are no longer accepting bug reports unless they could be deemed high or critical severity or related to security in nature.
             The recommended action we suggest for v3 users is to utilize the various migration resources to upgrade your package from Strapi v3 to Strapi v4:
 
