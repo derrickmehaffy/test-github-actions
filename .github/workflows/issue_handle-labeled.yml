@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: unable to reproduce
-        if: github.event.label.name == 'status: can not reproduce'
+        if: ${{ github.event.label.name == "status: can not reproduce" }}
         uses: actions-cool/issues-helper@v3
         with:
           actions: 'create-comment'
@@ -31,7 +31,7 @@ jobs:
             Please note that issues labeled with `status: can not reproduce` will be closed in 14 days if there is no activity.
             Thank you!
       - name: add random solution engineer to reproduction issues
-        if: github.event.label.name == 'status: pending reproduction'
+        if: ${{ github.event.label.name == "status: pending reproduction" }}
         uses: actions-cool/issues-helper@v3
         with:
           actions: 'add-assignees'
@@ -40,7 +40,7 @@ jobs:
           assignees: 'derrickmehaffy' or 'kasonde' or 'bolg55'
           random-to: 1
       - name: comment on unsupported v3 issues
-        if: github.event.label.name == 'flag: v3-unsupported'
+        if: ${{ github.event.label.name == "flag: v3-unsupported" }}
         uses: actions-cool/issues-helper@v3
         with:
           actions: 'create-comment'
@@ -60,7 +60,7 @@ jobs:
 
             Thank You
       - name: close unsupported v3 issues
-        if: github.event.label.name == 'flag: v3-unsupported'
+        if: ${{ github.event.label.name == "flag: v3-unsupported" }}
         uses: actions-cool/issues-helper@v3
         with:
           actions: 'close-issue'
